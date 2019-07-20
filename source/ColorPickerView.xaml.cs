@@ -142,11 +142,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
             if (!e.InContact)
             {
-                if (e.ActionType == SKTouchAction.Released || e.ActionType == SKTouchAction.Cancelled)
-                {
-                    ViewModel.UpdateHex();
-                }
-
                 return;
             }
 
@@ -253,11 +248,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
             if (!e.InContact)
             {
-                if (e.ActionType == SKTouchAction.Released || e.ActionType == SKTouchAction.Cancelled)
-                {
-                    ViewModel.UpdateHex();
-                }
-
                 return;
             }
 
@@ -339,11 +329,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
             if (!e.InContact)
             {
-                if (e.ActionType == SKTouchAction.Released || e.ActionType == SKTouchAction.Cancelled)
-                {
-                    ViewModel.UpdateHex();
-                }
-
                 return;
             }
 
