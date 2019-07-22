@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
@@ -14,7 +15,7 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
         public Color Color
         {
-            get => SKColorUtil.FromHsv(H, S, V, A).ToFormsColor();
+            get => SKColor.ToFormsColor();
             set
             {
                 var skColor = value.ToSKColor();
@@ -26,6 +27,8 @@ namespace Spillman.Xamarin.Forms.ColorPicker
                 V = v;
             }
         }
+
+        public SKColor SKColor => SKColorUtil.FromHsv(H, S, V, A);
 
         public Color HueColor => SKColorUtil.FromHsv(H, 100, 100).ToFormsColor();
 
