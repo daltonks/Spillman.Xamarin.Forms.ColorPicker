@@ -28,6 +28,7 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             }
         }
 
+        // ReSharper disable once InconsistentNaming
         public SKColor SKColor => SKColorUtil.FromHsv(H, S, V, A);
 
         public Color HueColor => SKColorUtil.FromHsv(H, 100, 100).ToFormsColor();

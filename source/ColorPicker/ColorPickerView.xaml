@@ -55,12 +55,20 @@
                    VerticalTextAlignment="Center"
                    Text="A" />
 
+            <Entry x:Name="AlphaEntry"
+                   VerticalOptions="Center"
+                   WidthRequest="70"
+                   Text="{Binding A}"
+                   Keyboard="Numeric"
+                   TextChanged="OnAlphaEntryTextChanged"
+                   Unfocused="OnAlphaEntryUnfocused" />
+
             <Slider HorizontalOptions="FillAndExpand" 
                     Minimum="0" Maximum="255" 
                     Value="{Binding A}" 
                     MaximumTrackColor="LightGray" 
                     MinimumTrackColor="Gray" 
-                    ThumbColor="#333333" /> 
+                    ThumbColor="#333333" />
         </StackLayout>
 
         <!-- Hex -->
@@ -69,7 +77,7 @@
                    VerticalTextAlignment="Center"
                    Text="#" />
 
-            <Entry HorizontalOptions="FillAndExpand"
+            <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                    Text="{Binding Hex}"
                    Keyboard="Plain"
                    Unfocused="OnHexUnfocused" />
