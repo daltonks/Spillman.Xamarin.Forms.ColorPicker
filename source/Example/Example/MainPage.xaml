@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:colorPicker="clr-namespace:Spillman.Xamarin.Forms.ColorPicker;assembly=Spillman.Xamarin.Forms.ColorPicker"
+             mc:Ignorable="d"
+             x:Class="Example.MainPage">
+
+    <colorPicker:ColorPickerView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <colorPicker:ColorPickerView.BindingContext>
+            <colorPicker:ColorPickerViewModel />
+        </colorPicker:ColorPickerView.BindingContext>
+    </colorPicker:ColorPickerView>
+</ContentPage>

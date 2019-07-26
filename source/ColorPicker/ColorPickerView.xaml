@@ -9,8 +9,8 @@
              x:Class="Spillman.Xamarin.Forms.ColorPicker.ColorPickerView"
              x:DataType="colorPicker:ColorPickerViewModel">
     <StackLayout>
-        <StackLayout Orientation="Horizontal" 
-                     HeightRequest="200">
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <!-- Saturation and value box -->
             <AbsoluteLayout HorizontalOptions="FillAndExpand">
                 <BoxView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -50,12 +50,18 @@
         </AbsoluteLayout>
         
         <!-- Alpha -->
-        <skiaSharp:SKCanvasView x:Name="AlphaCanvasView"
-                                HorizontalOptions="FillAndExpand"
-                                HeightRequest="25"
-                                PaintSurface="OnAlphaPaintSurface"
-                                EnableTouchEvents="True"
-                                Touch="OnAlphaTouch" />
+        <StackLayout Orientation="Horizontal">
+            <Label VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   Text="A" />
+
+            <Slider HorizontalOptions="FillAndExpand" 
+                    Minimum="0" Maximum="255" 
+                    Value="{Binding A}" 
+                    MaximumTrackColor="LightGray" 
+                    MinimumTrackColor="Gray" 
+                    ThumbColor="#333333" /> 
+        </StackLayout>
 
         <!-- Hex -->
         <StackLayout Orientation="Horizontal">
