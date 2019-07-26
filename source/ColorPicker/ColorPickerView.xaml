@@ -31,8 +31,14 @@
             </AbsoluteLayout>
             
             <!-- Color box -->
-            <BoxView WidthRequest="40"
-                     Color="{Binding Color}" />
+            <AbsoluteLayout>
+                <colorPicker:TransparencyCheckeredView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+
+                <BoxView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         WidthRequest="40"
+                         Color="{Binding Color}" />
+            </AbsoluteLayout>
+            
         </StackLayout>
 
         <!-- Hue rainbow -->
@@ -63,12 +69,12 @@
                    TextChanged="OnAlphaEntryTextChanged"
                    Unfocused="OnAlphaEntryUnfocused" />
 
-            <Slider HorizontalOptions="FillAndExpand" 
-                    Minimum="0" Maximum="255" 
-                    Value="{Binding A}" 
-                    MaximumTrackColor="LightGray" 
-                    MinimumTrackColor="Gray" 
-                    ThumbColor="#333333" />
+            <skiaSharp:SKCanvasView x:Name="AlphaCanvasView" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    HeightRequest="25" 
+                                    PaintSurface="OnAlphaPaintSurface" 
+                                    EnableTouchEvents="True" 
+                                    Touch="OnAlphaTouch" /> 
         </StackLayout>
 
         <!-- Hex -->
