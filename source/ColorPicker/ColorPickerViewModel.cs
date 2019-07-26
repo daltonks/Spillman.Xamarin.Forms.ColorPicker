@@ -87,7 +87,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             {
                 if (SetProperty(ref _a, value))
                 {
-                    SetProperty(ref _hex, Color.ToArgbHex(), nameof(Hex));
                     RaisePropertyChanged(nameof(Color));
                 }
             }
@@ -101,7 +100,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             {
                 if (SetProperty(ref _h, value))
                 {
-                    SetProperty(ref _hex, Color.ToArgbHex(), nameof(Hex));
                     RaisePropertyChanged(nameof(Color));
                     RaisePropertyChanged(nameof(HueColor));
                 }
@@ -116,7 +114,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             {
                 if (SetProperty(ref _s, value))
                 {
-                    SetProperty(ref _hex, Color.ToArgbHex(), nameof(Hex));
                     RaisePropertyChanged(nameof(Color));
                 }
             }
@@ -130,10 +127,14 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             {
                 if (SetProperty(ref _v, value))
                 {
-                    SetProperty(ref _hex, Color.ToArgbHex(), nameof(Hex));
                     RaisePropertyChanged(nameof(Color));
                 }
             }
+        }
+
+        public void UpdateHex()
+        {
+            SetProperty(ref _hex, Color.ToRgbHex(), nameof(Hex));
         }
 
         private bool SetProperty<T>(ref T obj, T value, [CallerMemberName] string propertyName = null)
