@@ -7,9 +7,12 @@
              xmlns:colorPicker="clr-namespace:Spillman.Xamarin.Forms.ColorPicker;assembly=Spillman.Xamarin.Forms.ColorPicker"
              mc:Ignorable="d"
              x:Class="Spillman.Xamarin.Forms.ColorPicker.ColorPickerView"
-             x:DataType="colorPicker:ColorPickerViewModel">
-    <StackLayout>
+             x:DataType="colorPicker:ColorPickerViewModel"
+             BackgroundColor="White"
+             WidthRequest="255" HeightRequest="300">
+    <StackLayout Spacing="0">
         <StackLayout Orientation="Horizontal"
+                     Spacing="0"
                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <!-- Saturation and value box -->
             <AbsoluteLayout HorizontalOptions="FillAndExpand">
@@ -38,12 +41,11 @@
                          WidthRequest="40"
                          Color="{Binding Color}" />
             </AbsoluteLayout>
-            
         </StackLayout>
 
         <!-- Hue rainbow -->
         <AbsoluteLayout HorizontalOptions="FillAndExpand"
-                        HeightRequest="25">
+                        HeightRequest="24">
             <skiaSharp:SKCanvasView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                     PaintSurface="OnHueRainbowPaintSurface" />
 
@@ -55,12 +57,39 @@
                                     BackgroundColor="Transparent" />
         </AbsoluteLayout>
         
-        <!-- Alpha -->
+        <!-- Alpha slider -->
         <StackLayout Orientation="Horizontal">
+            <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                            HeightRequest="24">
+                <colorPicker:TransparencyCheckeredView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+
+                <skiaSharp:SKCanvasView x:Name="AlphaCanvasView" 
+                                        AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                        PaintSurface="OnAlphaPaintSurface" 
+                                        EnableTouchEvents="True" 
+                                        Touch="OnAlphaTouch"
+                                        BackgroundColor="Transparent" /> 
+            </AbsoluteLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <!-- # Label -->
+            <Label VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   Text="#" />
+
+            <!-- Hex Entry -->
+            <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                   Text="{Binding Hex}"
+                   Keyboard="Plain"
+                   Unfocused="OnHexUnfocused" />
+
+            <!-- A Label -->
             <Label VerticalOptions="Center"
                    VerticalTextAlignment="Center"
                    Text="A" />
 
+            <!-- Alpha Entry -->
             <Entry x:Name="AlphaEntry"
                    VerticalOptions="Center"
                    WidthRequest="70"
@@ -68,25 +97,6 @@
                    Keyboard="Numeric"
                    TextChanged="OnAlphaEntryTextChanged"
                    Unfocused="OnAlphaEntryUnfocused" />
-
-            <skiaSharp:SKCanvasView x:Name="AlphaCanvasView" 
-                                    HorizontalOptions="FillAndExpand" 
-                                    HeightRequest="25" 
-                                    PaintSurface="OnAlphaPaintSurface" 
-                                    EnableTouchEvents="True" 
-                                    Touch="OnAlphaTouch" /> 
-        </StackLayout>
-
-        <!-- Hex -->
-        <StackLayout Orientation="Horizontal">
-            <Label VerticalOptions="Center"
-                   VerticalTextAlignment="Center"
-                   Text="#" />
-
-            <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"
-                   Text="{Binding Hex}"
-                   Keyboard="Plain"
-                   Unfocused="OnHexUnfocused" />
         </StackLayout>
     </StackLayout>
 </ContentView>

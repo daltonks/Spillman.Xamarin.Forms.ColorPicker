@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using Spillman.Xamarin.Forms.ColorPicker;
 using Xamarin.Forms;
 
 namespace Example
@@ -16,6 +12,8 @@ namespace Example
         public MainPage()
         {
             InitializeComponent();
+
+            BindingContext = new ColorPickerViewModel();
         }
     }
 }

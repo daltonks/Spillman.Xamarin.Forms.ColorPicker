@@ -5,11 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:colorPicker="clr-namespace:Spillman.Xamarin.Forms.ColorPicker;assembly=Spillman.Xamarin.Forms.ColorPicker"
              mc:Ignorable="d"
-             x:Class="Example.MainPage">
-
-    <colorPicker:ColorPickerView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <colorPicker:ColorPickerView.BindingContext>
-            <colorPicker:ColorPickerViewModel />
-        </colorPicker:ColorPickerView.BindingContext>
-    </colorPicker:ColorPickerView>
+             x:Class="Example.MainPage"
+             BackgroundColor="{Binding Color}">
+    <ContentView HorizontalOptions="Center" VerticalOptions="Center"
+                 Padding="8"
+                 BackgroundColor="White">
+        <colorPicker:ColorPickerView />
+    </ContentView>
 </ContentPage>
