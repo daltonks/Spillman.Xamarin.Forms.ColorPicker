@@ -51,6 +51,42 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             ViewModel.Hex = ViewModel.Color.ToRgbHex();
         }
 
+        private void OnAlphaEntryTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (e.NewTextValue == null)
+            {
+                return;
+            }
+
+            var cleanedText = "";
+            foreach (var c in e.NewTextValue)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    cleanedText += c;
+                }
+            }
+
+            if (cleanedText == "")
+            {
+                ViewModel.A = 0;
+            }
+            else
+            {
+                var alpha = int.Parse(cleanedText);
+                if (alpha > byte.MaxValue)
+                {
+                    cleanedText = byte.MaxValue.ToString();
+                }
+            }
+            AlphaEntry.Text = cleanedText;
+        }
+
+        private void OnAlphaEntryUnfocused(object sender, FocusEventArgs e)
+        {
+            AlphaEntry.Text = ViewModel.A.ToString();
+        }
+
         private void OnSaturationValueGradientsPaintSurface(object sender, SKPaintSurfaceEventArgs e)
         {
             var info = e.Info;
