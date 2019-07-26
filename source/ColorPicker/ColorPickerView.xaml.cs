@@ -48,8 +48,8 @@ namespace Spillman.Xamarin.Forms.ColorPicker
                 case nameof(ColorPickerViewModel.A): 
                     AlphaCanvasView.InvalidateSurface(); 
                     break; 
-            } 
-        } 
+            }
+        }
 
         private void OnHexUnfocused(object sender, FocusEventArgs e)
         {
@@ -321,7 +321,7 @@ namespace Spillman.Xamarin.Forms.ColorPicker
  
             _alphaPixelSize = info.Size; 
  
-            canvas.Clear(SKColors.White); 
+            canvas.Clear(SKColors.Transparent); 
  
             using (var gradientPaint = new SKPaint { Style = SKPaintStyle.Fill }) 
             { 
@@ -345,20 +345,13 @@ namespace Spillman.Xamarin.Forms.ColorPicker
                 info.Height / 2f 
             ); 
  
-            var pixelsPerXamarinUnit = info.Width / SelectedHueRainbowCanvasView.Width; 
+            var pixelsPerXamarinUnit = info.Width / AlphaCanvasView.Width; 
  
             var strokeWidth = (float) (1.5 * pixelsPerXamarinUnit); 
             var innerRadius = info.Height / 2f - 2 * strokeWidth; 
  
             using (var circlePaint = new SKPaint { IsAntialias = true, StrokeWidth = strokeWidth }) 
-            { 
-                circlePaint.Style = SKPaintStyle.Fill; 
-                circlePaint.Color = SKColors.White; 
-                canvas.DrawCircle(center, innerRadius, circlePaint); 
- 
-                circlePaint.Color = ViewModel.Color.ToSKColor(); 
-                canvas.DrawCircle(center, innerRadius, circlePaint); 
- 
+            {
                 circlePaint.Style = SKPaintStyle.Stroke; 
                 circlePaint.Color = SKColors.White; 
                 canvas.DrawCircle(center, innerRadius, circlePaint); 
