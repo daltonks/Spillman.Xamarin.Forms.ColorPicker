@@ -12,8 +12,6 @@ namespace Example
         public MainPage()
         {
             InitializeComponent();
-
-            BindingContext = new ColorPickerViewModel();
         }
     }
 }

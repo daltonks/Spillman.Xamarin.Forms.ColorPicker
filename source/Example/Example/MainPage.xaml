@@ -7,6 +7,10 @@
              mc:Ignorable="d"
              x:Class="Example.MainPage"
              BackgroundColor="{Binding Color}">
+    <ContentPage.BindingContext>
+        <colorPicker:ColorPickerViewModel />
+    </ContentPage.BindingContext>
+
     <ContentView HorizontalOptions="Center" VerticalOptions="Center"
                  Padding="8"
                  BackgroundColor="White">
