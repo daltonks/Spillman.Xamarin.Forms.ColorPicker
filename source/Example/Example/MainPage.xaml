@@ -6,7 +6,7 @@
              xmlns:colorPicker="clr-namespace:Spillman.Xamarin.Forms.ColorPicker;assembly=Spillman.Xamarin.Forms.ColorPicker"
              mc:Ignorable="d"
              x:Class="Example.MainPage"
-             BackgroundColor="{Binding Color}">
+             BackgroundColor="White">
     <ContentPage.BindingContext>
         <colorPicker:ColorPickerViewModel />
     </ContentPage.BindingContext>

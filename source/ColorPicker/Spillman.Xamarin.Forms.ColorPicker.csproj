@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Dalton Spillman</Authors>
+    <Company />
+    <PackageProjectUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Nice looking HSV color picker for Xamarin forms with alpha and hex support.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</RepositoryUrl>
+    <PackageTags>xamarin forms color picker hsv</PackageTags>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
