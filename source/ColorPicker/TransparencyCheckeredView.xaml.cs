@@ -15,6 +15,11 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
         private void OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
         {
+            if (Width < 1)
+            {
+                return;
+            }
+
             var canvas = e.Surface.Canvas;
             var canvasPixelWidth = e.Info.Width;
             var canvasPixelHeight = e.Info.Height;

@@ -1,6 +1,6 @@
 # Spillman.Xamarin.Forms.ColorPicker
 
-Nice looking HSV color picker for Xamarin forms with alpha and hex support.
+Nice looking HSV color picker for Xamarin Forms with alpha and hex support.
 
 [Little video](https://www.youtube.com/watch?v=A5GesThEogo)
 
