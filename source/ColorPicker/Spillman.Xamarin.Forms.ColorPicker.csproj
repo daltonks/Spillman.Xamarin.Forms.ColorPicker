@@ -6,11 +6,13 @@
     <Company />
     <PackageProjectUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Nice looking HSV color picker for Xamarin forms with alpha and hex support.</Description>
+    <Description>Nice looking HSV color picker for Xamarin Forms with alpha and hex support.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</RepositoryUrl>
     <PackageTags>xamarin forms color picker hsv</PackageTags>
     <RepositoryType>Git</RepositoryType>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Fixed TransparencyCheckeredView hanging when Width &lt; 0. This sometimes occurs on iOS.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
