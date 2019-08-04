@@ -62,12 +62,11 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
                     skColor.ToHsv(out var h, out var s, out var v);
 
-                    var alphaChanged = SetProperty(ref _a, skColor.Alpha, nameof(A));
                     var hChanged = SetProperty(ref _h, h, nameof(H));
                     var sChanged = SetProperty(ref _s, s, nameof(S));
                     var vChanged = SetProperty(ref _v, v, nameof(V));
 
-                    if (alphaChanged || hChanged || sChanged || vChanged)
+                    if (hChanged || sChanged || vChanged)
                     {
                         RaisePropertyChanged(nameof(Color));
                     }

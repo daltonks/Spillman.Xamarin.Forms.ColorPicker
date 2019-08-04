@@ -11,8 +11,8 @@
     <RepositoryUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</RepositoryUrl>
     <PackageTags>xamarin forms color picker hsv</PackageTags>
     <RepositoryType>Git</RepositoryType>
-    <Version>1.0.1</Version>
-    <PackageReleaseNotes>Fixed TransparencyCheckeredView hanging when Width &lt; 0. This sometimes occurs on iOS.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Fixed hex entry changing alpha value.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
