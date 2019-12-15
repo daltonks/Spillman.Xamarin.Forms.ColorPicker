@@ -11,8 +11,8 @@
     <RepositoryUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</RepositoryUrl>
     <PackageTags>xamarin forms color picker hsv</PackageTags>
     <RepositoryType>Git</RepositoryType>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes>Fixed hex entry changing alpha value.</PackageReleaseNotes>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes>Increased height of sliders for an easier time on touch screens. Increased HV circle radius.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,5 +35,7 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarSpillmanXamarinFormsColorPickerHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
