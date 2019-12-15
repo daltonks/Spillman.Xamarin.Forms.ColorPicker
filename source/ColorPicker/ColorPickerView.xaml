@@ -45,7 +45,7 @@
 
         <!-- Hue rainbow -->
         <AbsoluteLayout HorizontalOptions="FillAndExpand"
-                        HeightRequest="24">
+                        HeightRequest="32">
             <skiaSharp:SKCanvasView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                     PaintSurface="OnHueRainbowPaintSurface" />
 
@@ -60,7 +60,7 @@
         <!-- Alpha slider -->
         <StackLayout Orientation="Horizontal">
             <AbsoluteLayout HorizontalOptions="FillAndExpand"
-                            HeightRequest="24">
+                            HeightRequest="32">
                 <colorPicker:TransparencyCheckeredView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
 
                 <skiaSharp:SKCanvasView x:Name="AlphaCanvasView" 

@@ -153,7 +153,7 @@ namespace Spillman.Xamarin.Forms.ColorPicker
 
             var pixelsPerXamarinUnit = info.Width / SelectedSaturationValueCanvasView.Width;
 
-            var innerRadius = (float) (10 * pixelsPerXamarinUnit);
+            var innerRadius = (float) (16 * pixelsPerXamarinUnit);
             var strokeWidth = (float) (1.5f * pixelsPerXamarinUnit);
 
             using (var paint = new SKPaint { IsAntialias = true, StrokeWidth = strokeWidth })
