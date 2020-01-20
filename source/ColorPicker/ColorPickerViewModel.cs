@@ -13,6 +13,13 @@ namespace Spillman.Xamarin.Forms.ColorPicker
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private bool _isAlphaEnabled = true;
+        public bool IsAlphaEnabled
+        {
+            get => _isAlphaEnabled;
+            set => SetProperty(ref _isAlphaEnabled, value);
+        }
+
         public Color Color
         {
             get => SKColor.ToFormsColor();
