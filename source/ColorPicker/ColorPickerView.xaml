@@ -58,7 +58,8 @@
         </AbsoluteLayout>
         
         <!-- Alpha slider -->
-        <StackLayout Orientation="Horizontal">
+        <StackLayout IsVisible="{Binding IsAlphaEnabled}"
+                     Orientation="Horizontal">
             <AbsoluteLayout HorizontalOptions="FillAndExpand"
                             HeightRequest="32">
                 <colorPicker:TransparencyCheckeredView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
@@ -85,12 +86,14 @@
                    Unfocused="OnHexUnfocused" />
 
             <!-- A Label -->
-            <Label VerticalOptions="Center"
+            <Label IsVisible="{Binding IsAlphaEnabled}"
+                   VerticalOptions="Center"
                    VerticalTextAlignment="Center"
                    Text="A" />
 
             <!-- Alpha Entry -->
             <Entry x:Name="AlphaEntry"
+                   IsVisible="{Binding IsAlphaEnabled}"
                    VerticalOptions="Center"
                    WidthRequest="70"
                    Text="{Binding A}"
