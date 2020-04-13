@@ -14,7 +14,6 @@ namespace Spillman.Xamarin.Forms.ColorPicker
         public ColorPickerView()
         {
             InitializeComponent();
-            BindingContextChanged += OnBindingContextChanged;
         }
 
         public ColorPickerViewModel ViewModel
@@ -23,10 +22,51 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             set => BindingContext = value;
         }
 
-        private void OnBindingContextChanged(object sender, EventArgs e)
+        private bool _changingAlphaText;
+        private string _alphaText = "";
+        public string AlphaText
         {
+            get => _alphaText;
+            set
+            {
+                _changingAlphaText = true;
+
+                if (_alphaText != value)
+                {
+                    var cleanedText = "";
+                    foreach (var c in value)
+                    {
+                        if (c >= '0' && c <= '9')
+                        {
+                            cleanedText += c;
+                        }
+                    }
+
+                    if (cleanedText == "")
+                    {
+                        cleanedText = "0";
+                    }
+
+                    if (byte.TryParse(cleanedText, out var alpha))
+                    {
+                        ViewModel.A = alpha;
+                    }
+                    
+                    _alphaText = value;
+                    OnPropertyChanged();
+                }
+
+                _changingAlphaText = false;
+            }
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
             if (ViewModel != null)
             {
+                AlphaText = ViewModel.A.ToString();
                 ViewModel.PropertyChanged += OnViewModelPropertyChanged;
             }
         }
@@ -45,8 +85,12 @@ namespace Spillman.Xamarin.Forms.ColorPicker
                     SelectedSaturationValueCanvasView.InvalidateSurface(); 
                     AlphaCanvasView.InvalidateSurface(); 
                     break; 
-                case nameof(ColorPickerViewModel.A): 
-                    AlphaCanvasView.InvalidateSurface(); 
+                case nameof(ColorPickerViewModel.A):
+                    if (!_changingAlphaText)
+                    {
+                        AlphaText = ViewModel.A.ToString();
+                    }
+                    AlphaCanvasView.InvalidateSurface();
                     break; 
             }
         }
@@ -56,40 +100,9 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             ViewModel.Hex = ViewModel.Color.ToRgbHex();
         }
 
-        private void OnAlphaEntryTextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (e.NewTextValue == null)
-            {
-                return;
-            }
-
-            var cleanedText = "";
-            foreach (var c in e.NewTextValue)
-            {
-                if (c >= '0' && c <= '9')
-                {
-                    cleanedText += c;
-                }
-            }
-
-            if (cleanedText == "")
-            {
-                ViewModel.A = 0;
-            }
-            else
-            {
-                var alpha = int.Parse(cleanedText);
-                if (alpha > byte.MaxValue)
-                {
-                    cleanedText = byte.MaxValue.ToString();
-                }
-            }
-            AlphaEntry.Text = cleanedText;
-        }
-
         private void OnAlphaEntryUnfocused(object sender, FocusEventArgs e)
         {
-            AlphaEntry.Text = ViewModel.A.ToString();
+            AlphaText = ViewModel.A.ToString();
         }
 
         private void OnSaturationValueGradientsPaintSurface(object sender, SKPaintSurfaceEventArgs e)
