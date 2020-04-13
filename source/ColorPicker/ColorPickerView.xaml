@@ -8,6 +8,7 @@
              mc:Ignorable="d"
              x:Class="Spillman.Xamarin.Forms.ColorPicker.ColorPickerView"
              x:DataType="colorPicker:ColorPickerViewModel"
+             x:Name="View"
              BackgroundColor="White"
              WidthRequest="255" HeightRequest="300">
     <StackLayout Spacing="0">
@@ -96,9 +97,8 @@
                    IsVisible="{Binding IsAlphaEnabled}"
                    VerticalOptions="Center"
                    WidthRequest="70"
-                   Text="{Binding A}"
+                   Text="{Binding AlphaText, Source={x:Reference View}}"
                    Keyboard="Numeric"
-                   TextChanged="OnAlphaEntryTextChanged"
                    Unfocused="OnAlphaEntryUnfocused" />
         </StackLayout>
     </StackLayout>
