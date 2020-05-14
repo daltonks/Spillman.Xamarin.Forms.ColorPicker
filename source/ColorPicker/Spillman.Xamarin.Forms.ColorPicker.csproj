@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,14 +11,16 @@
     <RepositoryUrl>https://github.com/daltonks/Spillman.Xamarin.Forms.ColorPicker</RepositoryUrl>
     <PackageTags>xamarin forms color picker hsv</PackageTags>
     <RepositoryType>Git</RepositoryType>
-    <Version>1.0.5</Version>
-    <PackageReleaseNotes>Fixed alpha entry freezing the UI</PackageReleaseNotes>
+    <Version>1.0.6</Version>
+    <PackageReleaseNotes>- SkiaSharp &gt;= 1.68.2.1
+- SkiaSharp.Views.Forms &gt;= 1.68.2.1
+- Xamarin.Forms &gt;= 4.4.0.991864</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp" Version="1.68.0" />
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
+    <PackageReference Include="SkiaSharp" Version="1.68.2.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.2.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991864" />
   </ItemGroup>
 
   <ItemGroup>
