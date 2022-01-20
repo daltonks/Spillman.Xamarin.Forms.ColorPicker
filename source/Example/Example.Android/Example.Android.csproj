@@ -53,9 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.MediaRouter">
-      <Version>1.1.0</Version>
+      <Version>1.2.5.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991864" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
