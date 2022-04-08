@@ -20,6 +20,13 @@ namespace Spillman.Xamarin.Forms.ColorPicker
             set => SetProperty(ref _isAlphaEnabled, value);
         }
 
+        private bool _isHexEnabled = true;
+        public bool IsHexEnabled
+        {
+            get => _isHexEnabled;
+            set => SetProperty(ref _isHexEnabled, value);
+        }
+
         public Color Color
         {
             get => SKColor.ToFormsColor();
