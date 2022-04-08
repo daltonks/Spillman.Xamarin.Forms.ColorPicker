@@ -76,12 +76,14 @@
 
         <StackLayout Orientation="Horizontal">
             <!-- # Label -->
-            <Label VerticalOptions="Center"
+            <Label IsVisible="{Binding IsHexEnabled}"
+                   VerticalOptions="Center"
                    VerticalTextAlignment="Center"
                    Text="#" />
 
             <!-- Hex Entry -->
-            <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+            <Entry IsVisible="{Binding IsHexEnabled}"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                    Text="{Binding Hex}"
                    Keyboard="Plain"
                    Unfocused="OnHexUnfocused" />
